@@ -8,7 +8,8 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.recloudstream:cloudstream:4.4.0")
+    // CloudStream core (working via JitPack)
+    implementation("com.github.recloudstream:cloudstream:master-SNAPSHOT")
 }
 
 tasks.register<Jar>("buildCs3") {
