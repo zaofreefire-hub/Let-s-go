@@ -1,3 +1,9 @@
 #!/usr/bin/env sh
-DIR="$(cd "$(dirname "$0")" && pwd)"
-"$DIR/gradle/wrapper/gradle-wrapper.jar" "$@"
+
+JAVA_CMD="java"
+
+if [ -n "$JAVA_HOME" ] ; then
+    JAVA_CMD="$JAVA_HOME/bin/java"
+fi
+
+exec "$JAVA_CMD" -jar "$(dirname "$0")/gradle/wrapper/gradle-wrapper.jar" "$@"
