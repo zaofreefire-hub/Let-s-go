@@ -20,9 +20,9 @@ jobs:
           java-version: 17
 
       - name: Build cs3
-        run: |
-          chmod +x gradlew
-          ./gradlew build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: build
 
       - name: Upload cs3
         uses: actions/upload-artifact@v4
